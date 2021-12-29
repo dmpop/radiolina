@@ -44,7 +44,7 @@
 				}
 				?>
 			</select>
-			<button type='submit' role='button' name='stream'>Select</button>
+			<button type='submit' role='button' name='stream'>Play</button>
 		</form>
 		<?php
 		if (isset($_POST['stream'])) {
@@ -53,7 +53,7 @@
 		?>
 		<ol>
 			<li>
-				Choose the desired station and press <strong>Select</strong>.
+				Choose the desired station and press <strong>Play</strong>.
 			</li>
 			<li>
 				Use playback controls to start and stop streaming.
