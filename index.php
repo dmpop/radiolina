@@ -33,7 +33,6 @@
 		}
 		?>
 		<form action=" " method="POST">
-			<label for='weight'>Station:</label>
 			<select name="station">
 				<option value="default" selected>Select station</option>
 				<?php
@@ -48,8 +47,8 @@
 			<button type='submit' role='button' name='stream'>Select</button>
 		</form>
 		<?php
-		if (isset($_POST['station'])) {
-			echo '<audio style="width: 100%; margin-top: 2em;" src="' . $_POST['station'] . '" controls="true" volume="1.0"></audio></p>';
+		if (isset($_POST['stream'])) {
+			echo '<audio controls autoplay style="width: 100%; margin-top: 2em;"> <source src="' . $_POST['station'] . '">Audio tag is not supported in this browser.</audio></p>';
 		}
 		?>
 		<ol>
