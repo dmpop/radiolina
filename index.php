@@ -39,7 +39,7 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 		?>
 		<form action=" " method="POST">
 			<select name="station">
-				<option value="default" selected>Select station</option>
+				<option value="--" selected>Select station</option>
 				<?php
 				$files = glob($dir . "/*");
 				foreach ($files as $file) {
@@ -49,6 +49,7 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 				?>
 			</select>
 			<button type='submit' role='button' name='stream'>Play</button>
+			<button type="submit" value="Reload Page" onClick="window.location.reload(true)">Stop</button>
 		</form>
 		<?php
 		if (isset($_POST['station'])) {
@@ -63,7 +64,10 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 				Choose the desired station and press <strong>Play</strong>.
 			</li>
 			<li>
-				Use playback controls to start and stop streaming.
+				Use playback controls to start and pause streaming.
+			</li>
+			<li>
+				Press <strong>Stop</strong> to stop the radio.
 			</li>
 		</ol>
 	</div>
