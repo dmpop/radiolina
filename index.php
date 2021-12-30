@@ -1,5 +1,10 @@
+<?php
+$theme = "dark";
+$title = "Radio";
+$footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
+?>
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="<?php echo $theme; ?>">
 
 <!-- Author: Dmitri Popov, dmpop@linux.com
 	 License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
@@ -23,7 +28,7 @@
 	<div class="card text-center">
 		<div style="margin-top: 1em; margin-bottom: 1em;">
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #e68a00;">Radio</h1>
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #e68a00;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
@@ -59,6 +64,9 @@
 				Use playback controls to start and stop streaming.
 			</li>
 		</ol>
+	</div>
+	<div class="text-center">
+		<?php echo $footer; ?>
 	</div>
 </body>
 
