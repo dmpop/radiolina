@@ -43,17 +43,19 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 				<?php
 				$files = glob($dir . "/*");
 				foreach ($files as $file) {
-					$filename = basename($file);
 					$name = pathinfo($file)['extension'];
-					echo "<option value='" . file_get_contents($file) . "'>" . pathinfo($file)['filename'] . "</option>";
+					echo "<option value='" . $file . "'>" . pathinfo($file)['filename'] . "</option>";
 				}
 				?>
 			</select>
 			<button type='submit' role='button' name='stream'>Play</button>
 		</form>
 		<?php
-		if (isset($_POST['stream'])) {
-			echo '<audio controls autoplay style="width: 100%; margin-top: 2em;"> <source src="' . $_POST['station'] . '">Audio tag is not supported in this browser.</audio></p>';
+		if (isset($_POST['station'])) {
+			$url = file_get_contents($_POST['station']);
+			echo '<img style="margin-top: 1em;" src="audio.svg" />'; // Source: https://samherbert.net/svg-loaders/
+			echo "<h3 style='margin-top: 1em;'>" . pathinfo($_POST['station'])['filename'] . "</h3>";
+			echo '<audio controls autoplay style="width: 100%; margin-top: 1em;"> <source src="' . $url . '">Audio tag is not supported in this browser.</audio></p>';
 		}
 		?>
 		<ol>
