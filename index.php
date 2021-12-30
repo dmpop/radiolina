@@ -28,7 +28,7 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 	<div class="card text-center">
 		<div style="margin-top: 1em; margin-bottom: 1em;">
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #e68a00;"><?php echo $title; ?></h1>
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
