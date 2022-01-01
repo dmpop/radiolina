@@ -75,7 +75,11 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 			<li>
 				Press <strong>Stop</strong> to stop the radio.
 			</li>
+			<li>
+				Press <strong>Edit</strong> to add ad delete radio stations.
+			</li>
 		</ol>
+		<button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "edit.php"'>Edit</button>
 		<div style="margin-bottom: 1em;">
 			<?php echo $footer; ?>
 		</div>
