@@ -32,18 +32,20 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
-		$dir = "stations";
+		$dir = "stations/";
 		if (!file_exists($dir)) {
 			mkdir($dir, 0777, true);
+			$content = "http://stream.antenne.de/80er-kulthits";
+			file_put_contents($dir . "Radio station 1", $content);
 		}
 		?>
 		<form action=" " method="POST">
 			<select name="station">
 				<option value="--" selected>Select station</option>
 				<?php
-				$files = glob($dir . "/*");
+				$files = glob($dir . "*");
 				foreach ($files as $file) {
-					$name = pathinfo($file)['extension'];
+					$name = pathinfo($file);
 					echo "<option value='" . $file . "'>" . pathinfo($file)['filename'] . "</option>";
 				}
 				?>
@@ -53,10 +55,14 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 		</form>
 		<?php
 		if (isset($_POST['station'])) {
-			$url = file_get_contents($_POST['station']);
-			echo '<img style="margin-top: 1em;" src="audio.svg" />'; // Source: https://samherbert.net/svg-loaders/
+			$lines = file($_POST['station']);
+			if (isset($lines[1])) {
+				echo "<img style='margin-top: 1em; width:128px; max-width:100%;' src='$lines[1]' />";
+			} else {
+				echo '<img style="margin-top: 1em;" src="audio.svg" />'; // Source: https://samherbert.net/svg-loaders/
+			}
 			echo "<h3 style='margin-top: 1em;'>" . pathinfo($_POST['station'])['filename'] . "</h3>";
-			echo '<audio controls autoplay style="width: 100%; margin-top: 1em;"> <source src="' . $url . '">Audio tag is not supported in this browser.</audio></p>';
+			echo '<audio controls autoplay style="width: 100%; margin-top: 1em;"> <source src="' . $lines[0] . '">Audio tag is not supported in this browser.</audio></p>';
 		}
 		?>
 		<ol>
