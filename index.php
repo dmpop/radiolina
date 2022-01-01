@@ -1,5 +1,5 @@
 <?php
-$theme = "light";
+$theme = "dark";
 $title = "Radio";
 $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
 ?>
@@ -22,36 +22,6 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 			window.history.replaceState(null, null, window.location.href);
 		}
 	</script>
-
-	<!-- Switch theme START -->
-	<script>
-		function switchTheme(el) {
-			document.documentElement.setAttribute('data-theme', el.value)
-		}
-
-		function switchCSS(cssid, el) {
-			document.getElementById(cssid).href = el.value;
-		}
-
-		function addFontSize(addPx) {
-			html = document.querySelector('html');
-			currentSize = parseFloat(window.getComputedStyle(html, null)
-				.getPropertyValue('font-size'));
-			html.style.fontSize = (currentSize + addPx) + 'px';
-		}
-
-		function toggleDarkMode(el) {
-			var theme = 'light'
-			if (el.innerText == '☪') {
-				el.innerText = '☀';
-				theme = 'dark';
-			} else {
-				el.innerText = '☪';
-			}
-			document.documentElement.setAttribute('data-theme', theme)
-		}
-	</script>
-	<!-- Switch theme END -->
 </head>
 
 <body>
@@ -106,18 +76,9 @@ $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee<
 				Press <strong>Stop</strong> to stop the radio.
 			</li>
 		</ol>
-		<!-- Switch theme START -->
-		<p>Switch theme:
-			<select id="theme" onchange="switchTheme(this)">
-				<option value="dark">Dark</option>
-				<option value="light">Light</option>
-				<option value="sakura">Sakura</option>
-			</select>
-		</p>
-		<!-- Switch theme END -->
-	</div>
-	<div class="text-center">
-		<?php echo $footer; ?>
+		<div style="margin-bottom: 1em;">
+			<?php echo $footer; ?>
+		</div>
 	</div>
 </body>
 
