@@ -1,4 +1,4 @@
-# Little Radio
+# Radio
 
 Simple PHP web UI for streaming radio stations.
 
