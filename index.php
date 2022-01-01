@@ -64,20 +64,6 @@ include('config.php');
 			echo '<audio controls autoplay style="width: 100%; margin-top: 1em;"> <source src="' . $lines[0] . '">Audio tag is not supported in this browser.</audio></p>';
 		}
 		?>
-		<ol>
-			<li>
-				Choose the desired station and press <strong>Play</strong>.
-			</li>
-			<li>
-				Use playback controls to start and pause streaming.
-			</li>
-			<li>
-				Press <strong>Stop</strong> to stop the radio.
-			</li>
-			<li>
-				Press <strong>Edit</strong> to add ad delete radio stations.
-			</li>
-		</ol>
 		<button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "edit.php"'>Edit</button>
 		<div style="margin-bottom: 1em;">
 			<?php echo $footer; ?>
