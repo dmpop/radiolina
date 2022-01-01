@@ -9,7 +9,7 @@ include('config.php');
 	 License: GPLv3 https://www.gnu.org/licenses/gpl-3.0.txt -->
 
 <head>
-	<title>Radio</title>
+	<title><?php echo $title; ?></title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@ include('config.php');
 	<div class="card text-center">
 		<div style="margin-top: 1em; margin-bottom: 1em;">
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
-			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
+			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #ffcc02;"><?php echo $title; ?></h1>
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
@@ -56,7 +56,7 @@ include('config.php');
 		if (isset($_POST['station'])) {
 			$lines = file($_POST['station']);
 			if (isset($lines[1])) {
-				echo "<img style='margin-top: 1em; width:128px; max-width:100%;' src='$lines[1]' />";
+				echo "<img style='margin-top: 1em; width:128px; max-width:100%; border-radius: 7px;' src='$lines[1]' />";
 			} else {
 				echo '<img style="margin-top: 1em;" src="audio.svg" />'; // Source: https://samherbert.net/svg-loaders/
 			}
