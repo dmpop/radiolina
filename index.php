@@ -1,8 +1,7 @@
 <?php
-$theme = "dark";
-$title = "Radio";
-$footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
+include('config.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en" data-theme="<?php echo $theme; ?>">
 
