@@ -33,9 +33,10 @@ include('config.php');
 		<?php
 		$dir = "stations/";
 		if (!file_exists($dir)) {
-			mkdir($dir, 0777, true);
-			$content = "http://stream.antenne.de/80er-kulthits";
-			file_put_contents($dir . "Radio station 1", $content);
+			mkdir($dir, 0750, true);
+			$url = "http://stream.antenne.de/80er-kulthits";
+			$logo = "http://www.antenne.de/assets/icons/antenne-de/apple-touch-icon.png?v=3";
+			file_put_contents($dir . "Radio station 1", $url . PHP_EOL . $_POST['logo']);
 		}
 		?>
 		<form action=" " method="POST">
