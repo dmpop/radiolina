@@ -46,15 +46,14 @@ include('config.php');
 			</div>
 		</form>
 		<?php
-		$dir = "stations/";
 		if (isset($_POST['add']) && ($_POST['password'] = $password)) {
-			file_put_contents($dir . $_POST['station'], $_POST['url'] . PHP_EOL . $_POST['logo']);
+			file_put_contents($dir . DIRECTORY_SEPARATOR . $_POST['station'], $_POST['url'] . PHP_EOL . $_POST['logo']);
 			echo "<script>";
 			echo 'alert("' . $_POST['station'] . ' has been added.")';
 			echo "</script>";
 		}
 		if (isset($_POST['delete']) && ($_POST['password'] = $password)) {
-			unlink($dir . $_POST['station']);
+			unlink($dir . DIRECTORY_SEPARATOR . $_POST['station']);
 			echo "<script>";
 			echo 'alert("' . $_POST['station'] . ' has been deleted.")';
 			echo "</script>";

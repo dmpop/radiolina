@@ -31,21 +31,19 @@ include('config.php');
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
-		$dir = "stations/";
 		if (!file_exists($dir)) {
-			mkdir($dir, 0750, true);
+			mkdir($dir, 0750);
 			$url = "http://stream.antenne.de/80er-kulthits";
 			$logo = "http://www.antenne.de/assets/icons/antenne-de/apple-touch-icon.png?v=3";
-			file_put_contents($dir . "Radio station 1", $url . PHP_EOL . $_POST['logo']);
+			file_put_contents($dir . DIRECTORY_SEPARATOR . "Radio station 1", $url . PHP_EOL . $logo);
 		}
 		?>
 		<form action=" " method="POST">
 			<select name="station">
 				<option value="--" selected>Select station</option>
 				<?php
-				$files = glob($dir . "*");
+				$files = glob($dir . DIRECTORY_SEPARATOR . "*");
 				foreach ($files as $file) {
-					$name = pathinfo($file);
 					echo "<option value='" . $file . "'>" . pathinfo($file)['filename'] . "</option>";
 				}
 				?>
