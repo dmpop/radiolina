@@ -49,7 +49,7 @@ include('config.php');
 				?>
 			</select>
 			<button type='submit' role='button' name='stream'>Play</button>
-			<button type="submit" value="Reload Page" onClick="window.location.reload(true)">Stop</button>
+			<button type="submit" onClick="window.location.reload(true)">Stop</button>
 		</form>
 		<?php
 		if (isset($_POST['station'])) {

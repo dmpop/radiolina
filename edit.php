@@ -39,8 +39,8 @@ include('config.php');
 			<label for="logo">Logo URL:</label>
 			<input type="text" name="logo" id="logo">
 			<div>
-				<label for="removestation">Station to remove:</label>
-				<select name="removestation" id="removestation">
+				<label for="rmstation">Station to remove:</label>
+				<select name="rmstation" id="rmstation">
 					<option value="--" selected>Select station</option>
 					<?php
 					$files = glob($dir . DIRECTORY_SEPARATOR . "*");
@@ -65,9 +65,9 @@ include('config.php');
 			echo "</script>";
 		}
 		if (isset($_POST['remove']) && ($_POST['password'] = $password)) {
-			unlink($_POST['removestation']);
+			unlink($_POST['rmstation']);
 			echo "<script>";
-			echo 'alert("' . pathinfo($_POST['removestation'])['filename'] . ' has been deleted.")';
+			echo 'alert("' . pathinfo($_POST['rmstation'])['filename'] . ' has been removed.")';
 			echo "</script>";
 		}
 		?>
