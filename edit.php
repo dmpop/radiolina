@@ -33,16 +33,28 @@ include('config.php');
 		<button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>Back</button>
 		<form class="text-left" action=" " method="POST">
 			<label for="station">Station:</label>
-			<input type="text" name="station" value="">
-			<label for="url">URL:</label>
-			<input type="text" name="url" value="">
-			<label for="logo">Logo:</label>
-			<input type="text" name="logo" value="">
+			<input type="text" name="station" id="station">
+			<label for="url">Stream URL:</label>
+			<input type="text" name="url" id="url">
+			<label for="logo">Logo URL:</label>
+			<input type="text" name="logo" id="logo">
+			<div>
+				<label for="removestation">Station to remove:</label>
+				<select name="removestation" id="removestation">
+					<option value="--" selected>Select station</option>
+					<?php
+					$files = glob($dir . DIRECTORY_SEPARATOR . "*");
+					foreach ($files as $file) {
+						echo "<option value='" . $file . "'>" . pathinfo($file)['filename'] . "</option>";
+					}
+					?>
+				</select>
+			</div>
 			<label for="password">Password:</label>
-			<input type="password" name="password" value="">
+			<input type="password" name="password" id="password">
 			<div class="text-center">
 				<button type="submit" name="add">Add</button>
-				<button type="submit" name="delete">Delete</button>
+				<button type="submit" name="remove">Remove</button>
 			</div>
 		</form>
 		<?php
@@ -52,10 +64,10 @@ include('config.php');
 			echo 'alert("' . $_POST['station'] . ' has been added.")';
 			echo "</script>";
 		}
-		if (isset($_POST['delete']) && ($_POST['password'] = $password)) {
-			unlink($dir . DIRECTORY_SEPARATOR . $_POST['station']);
+		if (isset($_POST['remove']) && ($_POST['password'] = $password)) {
+			unlink($_POST['removestation']);
 			echo "<script>";
-			echo 'alert("' . $_POST['station'] . ' has been deleted.")';
+			echo 'alert("' . pathinfo($_POST['removestation'])['filename'] . ' has been deleted.")';
 			echo "</script>";
 		}
 		?>
