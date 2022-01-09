@@ -48,8 +48,8 @@ include('config.php');
 				}
 				?>
 			</select>
-			<button type='submit' role='button' name='stream'>Play</button>
-			<button type="submit" onClick="window.location.reload(true)">Stop</button>
+			<button title="Stream the selected radio station" type='submit' role='button' name='stream'><img style='vertical-align: middle;' src='svg/play.svg' /></button>
+			<button title="Stop streaming" type="submit" onClick="window.location.reload(true)"><img style='vertical-align: middle;' src='svg/stop.svg' /></button>
 		</form>
 		<?php
 		if (isset($_POST['station'])) {
@@ -63,7 +63,7 @@ include('config.php');
 			echo '<audio controls autoplay style="width: 100%; margin-top: 1em;"> <source src="' . $lines[0] . '">Audio tag is not supported in this browser.</audio></p>';
 		}
 		?>
-		<button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "edit.php"'>Edit</button>
+		<button title="Edit station list" style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "edit.php"'><img style='vertical-align: middle;' src='svg/edit.svg' /></button>
 		<div style="margin-bottom: 1em;">
 			<?php echo $footer; ?>
 		</div>

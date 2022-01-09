@@ -30,7 +30,7 @@ include('config.php');
 			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px; color: #ffcc02;"><?php echo $title; ?></h1>
 		</div>
 		<hr>
-		<button style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'>Back</button>
+		<button title="Back" style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'><img style='vertical-align: middle;' src='svg/back.svg' /></button>
 		<form class="text-left" action=" " method="POST">
 			<label for="station">Station:</label>
 			<input type="text" name="station" id="station">
@@ -53,18 +53,18 @@ include('config.php');
 			<label for="password">Password:</label>
 			<input type="password" name="password" id="password">
 			<div class="text-center">
-				<button type="submit" name="add">Add</button>
-				<button type="submit" name="remove">Remove</button>
+				<button title="Add station" type="submit" name="add"><img style='vertical-align: middle;' src='svg/add.svg' /></button>
+				<button title="Remove station" type="submit" name="remove"><img style='vertical-align: middle;' src='svg/remove.svg' /></button>
 			</div>
 		</form>
 		<?php
-		if (isset($_POST['add']) && ($_POST['password'] = $password)) {
+		if (isset($_POST['add']) && ($_POST['password'] == $password)) {
 			file_put_contents($dir . DIRECTORY_SEPARATOR . $_POST['station'], $_POST['url'] . PHP_EOL . $_POST['logo']);
 			echo "<script>";
 			echo 'alert("' . $_POST['station'] . ' has been added.")';
 			echo "</script>";
 		}
-		if (isset($_POST['remove']) && ($_POST['password'] = $password)) {
+		if (isset($_POST['remove']) && ($_POST['password'] == $password)) {
 			unlink($_POST['rmstation']);
 			echo "<script>";
 			echo 'alert("' . pathinfo($_POST['rmstation'])['filename'] . ' has been removed.")';
