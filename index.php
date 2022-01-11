@@ -39,7 +39,7 @@ include('config.php');
 		}
 		?>
 		<form action=" " method="POST">
-			<select name="station">
+			<select style="vertical-align: middle;" name="station">
 				<option value="--" selected>Select station</option>
 				<?php
 				$files = glob($dir . DIRECTORY_SEPARATOR . "*");
@@ -48,8 +48,8 @@ include('config.php');
 				}
 				?>
 			</select>
-			<button title="Stream the selected radio station" type='submit' role='button' name='stream'><img style='vertical-align: middle;' src='svg/play.svg' /></button>
-			<button title="Stop streaming" type="submit" onClick="window.location.reload(true)"><img style='vertical-align: middle;' src='svg/stop.svg' /></button>
+			<button style="vertical-align: middle;" title="Stream the selected radio station" type='submit' role='button' name='stream'><img style='vertical-align: middle;' src='svg/play.svg' /></button>
+			<button style="vertical-align: middle;" title="Stop streaming" type="submit" onClick="window.location.reload(true)"><img style='vertical-align: middle;' src='svg/stop.svg' /></button>
 		</form>
 		<?php
 		if (isset($_POST['station'])) {
