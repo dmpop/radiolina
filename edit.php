@@ -32,26 +32,31 @@ include('config.php');
 		<hr>
 		<button title="Back" style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'><img style='vertical-align: middle;' src='svg/back.svg' /></button>
 		<form class="text-left" action=" " method="POST">
-			<label for="station">Station:</label>
-			<input type="text" name="station" id="station">
-			<label for="url">Stream URL:</label>
-			<input type="text" name="url" id="url">
-			<label for="logo">Logo URL:</label>
-			<input type="text" name="logo" id="logo">
+			<label>Station:
+				<input type="text" name="station">
+			</label>
+			<label>Stream URL:
+				<input type="text" name="url">
+			</label>
+			<label>Logo URL:
+				<input type="text" name="logo">
+			</label>
 			<div>
-				<label for="rmstation">Station to remove:</label>
-				<select name="rmstation" id="rmstation">
-					<option value="--" selected>Select station</option>
-					<?php
-					$files = glob($dir . DIRECTORY_SEPARATOR . "*");
-					foreach ($files as $file) {
-						echo "<option value='" . $file . "'>" . pathinfo($file)['filename'] . "</option>";
-					}
-					?>
-				</select>
+				<label>Station to remove:
+					<select name="rmstation">
+						<option value="--" selected>Select station</option>
+						<?php
+						$files = glob($dir . DIRECTORY_SEPARATOR . "*");
+						foreach ($files as $file) {
+							echo "<option value='" . $file . "'>" . pathinfo($file)['filename'] . "</option>";
+						}
+						?>
+					</select>
+				</label>
 			</div>
-			<label for="password">Password:</label>
-			<input type="password" name="password" id="password">
+			<label>Password:
+				<input type="password" name="password">
+			</label>
 			<div class="text-center">
 				<button title="Add station" type="submit" name="add"><img style='vertical-align: middle;' src='svg/add.svg' /></button>
 				<button title="Remove station" type="submit" name="remove"><img style='vertical-align: middle;' src='svg/remove.svg' /></button>
