@@ -48,11 +48,11 @@ include('config.php');
 				}
 				?>
 			</select>
-			<button style="vertical-align: middle;" title="Stream the selected radio station" type='submit' role='button' name='stream'><img style='vertical-align: middle;' src='svg/play.svg' /></button>
+			<button style="vertical-align: middle;" title="Stream the selected radio station" type='submit' name='play'><img style='vertical-align: middle;' src='svg/play.svg' /></button>
 			<button style="vertical-align: middle;" title="Stop streaming" type="submit" onClick="window.location.reload(true)"><img style='vertical-align: middle;' src='svg/stop.svg' /></button>
 		</form>
 		<?php
-		if (isset($_POST['station'])) {
+		if (isset($_POST['play'])) {
 			$lines = file($_POST['station']);
 			if (isset($lines[1])) {
 				echo "<img style='margin-top: 1em; width:128px; max-width:100%; border-radius: 7px;' src='$lines[1]' />";
