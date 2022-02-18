@@ -33,10 +33,10 @@ include('config.php');
 		<button title="Back" style="margin-top: 1.5em; margin-bottom: 1.5em;" onclick='window.location.href = "index.php"'><img style='vertical-align: middle;' src='svg/back.svg' /></button>
 		<form class="text-left" action=" " method="POST">
 			<label>Station:
-				<input type="text" name="station" required>
+				<input type="text" name="station">
 			</label>
 			<label>Stream URL:
-				<input type="text" name="url" required>
+				<input type="text" name="url">
 			</label>
 			<label>Logo URL:
 				<input type="text" name="logo">
