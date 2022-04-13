@@ -1,4 +1,4 @@
-# Radio
+# Radiolina
 
 Simple PHP web UI for streaming radio stations.
 
@@ -10,17 +10,17 @@ Simple PHP web UI for streaming radio stations.
 ## Installation and usage
 
 1. Install PHP and Git on your machine.
-2. Clone the project's repository using the `git clone https://gitlab.com/dmpop/lilradio.git` command. Alternatively, download the latest source code using the appropriate button on the project's page.
-3. In the terminal, switch to the _lilradio_ directory and run the `php -S 0.0.0.0:8000` command.
+2. Clone the project's repository using the `git clone https://gitlab.com/dmpop/radiolina.git` command. Alternatively, download the latest source code using the appropriate button on the project's page.
+3. In the terminal, switch to the _radiolina_ directory and run the `php -S 0.0.0.0:8000` command.
 4. On any other machine on the same network, point the browser to _127.0.0.01:8000_  (replace _127.0.0.1_ with the actual IP address of the machine running Little Radio).
 
 ## Problems?
 
-Please report bugs and issues in the [Issues](https://gitlab.com/dmpop/lilradio/issues) section.
+Please report bugs and issues in the [Issues](https://gitlab.com/dmpop/radiolina/issues) section.
 
 ## Contribute
 
-If you've found a bug or have a suggestion for improvement, open an issue in the [Issues](https://gitlab.com/dmpop/lilradio/issues) section.
+If you've found a bug or have a suggestion for improvement, open an issue in the [Issues](https://gitlab.com/dmpop/radiolina/issues) section.
 
 To add a new feature or fix issues yourself, follow the following steps.
 
